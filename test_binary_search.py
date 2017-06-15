@@ -1,8 +1,8 @@
 import unittest
 
-from binary_search import a,binary_search
+from binary_search import BinarySearch
 
-class ListComprehensionTest(TestCase):
+class ListComprehensionTest(unittest.TestCase):
 
     """Binary Search to traverse an ordered list, effectively
        Populate the arrays with valid content
@@ -68,7 +68,7 @@ class ListComprehensionTest(TestCase):
                 )
 
 
-class BinarySearchTest(TestCase):
+class BinarySearchTest(unittest.TestCase):
 
     """Get the index of the item with an expected number of loops in\
      array [1, 2 . . . 20]
@@ -164,3 +164,4 @@ class BinarySearchTest(TestCase):
             search3['index'],
             msg='should return {count: 3, index: -1} for 10000'
         )
+
