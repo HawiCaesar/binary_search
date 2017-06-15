@@ -14,7 +14,7 @@ class BinarySearch(list):
 		self.length = len(self)
 
 
-	def search(self, value):
+	def search(self, search_value):
 		first = 0
 		last = len(self)-1
 		index_value = 0
@@ -22,40 +22,36 @@ class BinarySearch(list):
 
 		counter = 0
 
-		# if value == self[first]:
-		# 	index_value = first
-		# 	found  = True
+		if search_value == self[first]:
+			index_value = first
+			found  = True
 
-		# elif value == self[last]:
-		# 	index_value = last
-		# 	found = True
+		elif search_value == self[last]:
+			index_value = last
+			found = True
 
-		# if value not in self:
-		# 	found = False
-		# 	index_value = -1
+		if search_value not in self:
+			found = True
+			index_value = -1
 
 
 		while first <= last and not found:
 			middle_value = (first + last)//2
 
-			if self[middle_value] == value:
+			if self[middle_value] == search_value:
 				found = True
 				index_value = middle_value
 
 			else:
 				counter+=1 # Update counter when ther is an interation
-				if value < middle_value:
-					last -= 1
+
+				if  self[middle_value] > search_value:
+					last = middle_value - 1
 				else:
-					first += 1
-				print ("___%d ___ %d ___last %d") %(counter, middle_value, first)
+					first = middle_value + 1
 
 
 		return {"count": counter,  "index":index_value}
-
-b = BinarySearch(20, 1)
-#print b
-print(b.search(16))
 
 
 

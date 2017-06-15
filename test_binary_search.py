@@ -92,7 +92,7 @@ class BinarySearchTest(unittest.TestCase):
             search['index'],
             msg='should return {count: 4, index: 15} for 16'
         )
-"""
+
     def test_medium_list_search(self):
         search1 = self.two_to_forty.search(16)
         search2 = self.two_to_forty.search(40)
@@ -165,4 +165,3 @@ class BinarySearchTest(unittest.TestCase):
             msg='should return {count: 3, index: -1} for 10000'
         )
 
-"""
