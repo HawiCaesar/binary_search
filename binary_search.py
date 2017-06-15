@@ -13,7 +13,8 @@ class BinarySearch(list):
 		#length of list
 		self.length = len(self)
 
-
+	# Binary Search Algorithm
+	
 	def search(self, search_value):
 		first = 0
 		last = len(self)-1
@@ -22,13 +23,19 @@ class BinarySearch(list):
 
 		counter = 0
 
+		# Search value is the first value
+
 		if search_value == self[first]:
 			index_value = first
 			found  = True
 
+		# Search value is the last value
+
 		elif search_value == self[last]:
 			index_value = last
 			found = True
+
+		# Search value doesnt exist
 
 		if search_value not in self:
 			found = True
@@ -36,7 +43,7 @@ class BinarySearch(list):
 
 
 		while first <= last and not found:
-			middle_value = (first + last)//2
+			middle_value = (first + last)//2 # Divide and conquer rule
 
 			if self[middle_value] == search_value:
 				found = True
